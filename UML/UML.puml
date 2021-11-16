@@ -1,0 +1,35 @@
+@startuml
+package "Ucf Assignments" #DDDDDD {
+  Class HelloApplication{
+      {static} +launch()
+      +start scene
+}
+
+  Class HelloController{
+      use observe list
+      #addItem()
+      #deleteItem()
+      #markascomplete()
+      #markasincomplete()
+      #addDate()
+      #clearList()
+      #displayall()
+}
+
+  Class Application{
+      #extends
+      +Start()
+}
+
+  Class Item{
+      +Todo
+}
+  Abstract Serialize{
+   null()
+}
+
+HelloController--|>HelloApplication
+Application *--HelloApplication
+Item --|>HelloController
+Serialize<--Item
+@enduml
